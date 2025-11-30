@@ -5,8 +5,8 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'AI Consultant',
+  description: 'Your personal AI-powered business consultant.',
   generator: 'AI Consultant',
   icons: {
     icon: '/icon.svg',
