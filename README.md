@@ -1,233 +1,197 @@
-# Landing Page
+# AI Agency Landing Page
 
-A modern, accessible, and production-ready landing page built with Next.js and a component-first UI system. This repository contains the codebase for a responsive marketing website designed to be fast, extensible, and easy to scale into a full product or SaaS landing experience.
+A modern, responsive landing page for an AI consulting agency built with Next.js 16, React 19, and Tailwind CSS 4. Features stunning 3D animations, interactive components, and a professional design system.
 
-This README documents: what the project is, tech decisions, how to run it locally, production build and deployment guidance, and an extensive guide on how to scale and evolve the project for the future.
+## ✨ Features
 
----
+- **Modern Tech Stack**: Built with Next.js 16 App Router and React 19
+- **Beautiful UI**: Powered by shadcn/ui components with custom styling
+- **3D Animations**: Interactive Spline 3D scenes for engaging visuals
+- **Responsive Design**: Fully responsive across all devices
+- **Dark Mode Ready**: Built-in theme support with next-themes
+- **Performance Optimized**: Fast loading times with Next.js optimizations
+- **Type Safe**: Full TypeScript support throughout the project
 
-## Table of contents
+## 🛠️ Tech Stack
 
-- [Project overview](#project-overview)
-- [Key features](#key-features)
-- [Tech stack](#tech-stack)
-- [Repository layout](#repository-layout)
-- [Getting started (local development)](#getting-started-local-development)
-- [Building & deploying](#building--deploying)
-- [Scaling the project](#scaling-the-project)
-  - [Frontend scaling](#frontend-scaling)
-  - [Performance and reliability](#performance-and-reliability)
-  - [Data, APIs and backend integration](#data-apis-and-backend-integration)
-  - [Dev & engineering practices](#dev--engineering-practices)
-- [Monitoring, logging, and observability](#monitoring-logging-and-observability)
-- [Testing strategy](#testing-strategy)
-- [SEO & accessibility](#seo--accessibility)
-- [Roadmap & ideas](#roadmap--ideas)
-- [Contributing](#contributing)
-- [License & attribution](#license--attribution)
+- **Framework**: Next.js 16.0.5
+- **React**: 19.2.0
+- **Styling**: Tailwind CSS 4.1.17
+- **UI Components**: shadcn/ui (Radix UI primitives)
+- **3D Graphics**: Spline, Three.js, React Three Fiber
+- **Animations**: Framer Motion
+- **Typography**: Geist Sans & Geist Mono fonts
+- **Analytics**: Vercel Analytics
+- **Icons**: Lucide React
 
----
+## 📦 Installation
 
-## Project overview
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd my-v0-project
+```
 
-This repository is a high-quality starting point for a landing page: a lightweight Next.js app with a focused component library and utilities. The UI components (under `components/ui`) are built with composability and accessibility in mind, ready to be reused across pages and extended into marketing, docs, or product surfaces.
-
-Intended goals:
-
-- Be production-ready out-of-the-box for static marketing websites
-- Provide a consistent component library for future features (pricing, docs, auth flows)
-- Keep performance and accessibility at the center of decisions
-
-## Key features
-
-- Responsive layout optimized for desktop, tablet, and mobile
-- Component-driven design: reusable UI components under `components/ui`
-- Accessibility-first components (ARIA, keyboard navigation, semantic markup)
-- Fast builds and static-first approach — ideal for deploying to CDNs
-- Clean structure to add pages, integrations, and a CMS later
-
-## Tech stack
-
-- Framework: Next.js (React)
-- Package manager: pnpm
-- Styling: Tailwind CSS and project-level CSS under `styles/` or `app/globals.css`
-- Components: Local component library under `components/ui`
-- Deployment: Optimized for platforms like Vercel, Cloudflare Pages, Netlify, and static CDNs
-
-## Repository layout
-
-Top-level files & directories (high-level):
-
-- `app/` - Next.js app routes, pages and global layout
-- `components/` - Reusable UI components and the theme provider
-- `styles/` - Global styling and design tokens
-- `public/` - Static assets (icons, images, 3D objects)
-- `README.md` - Project documentation (this file)
-
----
-
-## Getting started (local development)
-
-Prerequisites
-
-- Node.js (LTS 18+ recommended)
-- pnpm installed globally (or use npm/yarn if you prefer)
-
-Install dependencies
-
-```powershell
+2. Install dependencies:
+```bash
+npm install
+# or
 pnpm install
+# or
+yarn install
 ```
 
-Run development server
-
-```powershell
+3. Run the development server:
+```bash
+npm run dev
+# or
 pnpm dev
+# or
+yarn dev
 ```
 
-Open http://localhost:3000 to view the site. Hot Module Replacement updates components and CSS on save.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Building for production
+## 🏗️ Project Structure
 
-```powershell
-pnpm build
-pnpm start # run the Next.js server in production
+```
+├── app/
+│   ├── globals.css          # Global styles and Tailwind config
+│   ├── layout.tsx            # Root layout component
+│   ├── page.tsx              # Home page
+│   ├── privacy/              # Privacy policy page
+│   └── terms/                # Terms of service page
+├── components/
+│   └── ui/                   # Reusable UI components
+├── hooks/                    # Custom React hooks
+├── lib/                      # Utility functions
+└── public/                   # Static assets
 ```
 
-Tips
+## 🎨 Key Components
 
-- Use a `.env` file (never commit it) for environment variables like NEXT_PUBLIC_API_URL.
-- Enable built-in Next.js image and font optimization features to reduce page size in production.
+### Custom UI Components
+- **Navbar**: Responsive navigation with smooth scrolling
+- **Hero Section**: Eye-catching hero with 3D Spline scene
+- **Bento Grid**: Modern grid layout for services showcase
+- **Pricing Cards**: Flexible pricing component with toggle
+- **Testimonials**: Customer testimonial cards
+- **Animated Backgrounds**: Gradient and particle effects
 
----
+### Pages
+- **Home** (`/`): Main landing page with all sections
+- **Privacy Policy** (`/privacy`): Privacy policy page
+- **Terms of Service** (`/terms`): Terms and conditions page
 
-## Building & deploying
+## 🎯 Features Breakdown
 
-Deployment targets
+### Hero Section
+- 3D interactive Spline scene
+- Spotlight effect animation
+- Clear call-to-action buttons
+- Trust indicators
 
-- Vercel: Native Next.js support and automatic optimizations — simplest option.
-- Cloudflare Pages / Netlify: Great for static-first sites; ensure serverless/SSR parts are handled appropriately.
-- Docker / Kubernetes: For self-hosted or complex infra with backend services.
+### Services Section
+- Bento grid layout
+- Service cards with icons
+- Hover effects and animations
 
-CI/CD
+### Social Proof
+- Customer testimonials
+- Star ratings
+- Company information
 
-- Set up a pipeline to run lint, tests, and builds. Example steps: install -> pnpm install -> pnpm build -> pnpm test -> deploy.
+### Pricing
+- Three-tier pricing structure
+- Monthly/yearly toggle
+- Feature comparison
+- Clear CTAs
 
-Production environment variables
+### Footer
+- Multi-column layout
+- Social media links
+- Company information
+- Quick links
 
-- Store secrets in your host's environment/secret manager. Avoid committing secrets to the repo.
+## 🚀 Deployment
 
----
+### Vercel (Recommended)
+```bash
+npm run build
+vercel --prod
+```
 
-## Scaling the project
+### Other Platforms
+```bash
+npm run build
+npm run start
+```
 
-This section explains how to grow the landing page into a larger product while preserving performance, quality, and developer velocity.
+## 📝 Environment Variables
 
-Frontend scaling
+No environment variables required for basic functionality. For analytics:
 
-- Modular components
-  - Decompose large components into smaller, composable primitives. Group by domain (marketing, product, shared, forms).
+```env
+# Optional: Vercel Analytics
+NEXT_PUBLIC_VERCEL_ANALYTICS=true
+```
 
-- Design system and tokens
-  - Extract tokens (colors, spacing, type) into a single source of truth and publish as a package for reuse across apps.
+## 🎨 Customization
 
-- Monorepo & package sharing
-  - If the product grows into multiple related projects (site, docs, app), move to pnpm workspaces or Turborepo for shared packages and unified workflows.
+### Colors
+Edit `app/globals.css` to customize the color scheme:
+```css
+:root {
+  --primary: /* your color */;
+  --secondary: /* your color */;
+  /* ... */
+}
+```
 
-- Micro frontends (strategic)
-  - If teams scale dramatically, use micro-frontends to split ownership, but keep landing pages small and fast to preserve conversion.
+### Content
+- Update text content in `app/page.tsx`
+- Modify metadata in `app/layout.tsx`
+- Replace logo/icons in `/public`
 
-Performance and reliability
+## 📱 Responsive Breakpoints
 
-- CDN & edge caching
-  - Push static content and pre-rendered pages to a CDN. Use cache headers smartly (long for static assets, short for dynamic content).
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
 
-- Incremental adoption
-  - Use ISR or on-demand revalidation when you need to update static content without rebuilding the whole site.
+## 🔧 Development
 
-- Image & asset optimization
-  - Serve optimized formats (AVIF/WebP), set responsive sizes, and lazy-load non-critical images.
+### Available Scripts
 
-- Performance budgets & CI checks
-  - Enforce budgets via Lighthouse CI and fail PRs that regress core, accessibility, or performance metrics.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-Backend & data architecture
+## 📄 License
 
-- API gateway
-  - Introduce an API layer for centralizing auth, logging, rate limits, and versioning.
+This project uses the following open-source components:
+- Next.js (MIT)
+- React (MIT)
+- Tailwind CSS (MIT)
+- shadcn/ui (MIT)
 
-- Server-side vs serverless
-  - Start serverless (low ops), and when predictable demand grows, use dedicated backend services or containers behind auto-scaling groups.
+## 🤝 Contributing
 
-- Caching & database scaling
-  - Use in-memory caches (Redis) for hot data; scale read-heavy services with replicas or read caches.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-Dev & engineering practices
+## 📞 Support
 
-- Trunk-based development & short-lived feature branches
-- Strong CI that runs lint, type checks and tests
-- Feature flags and gradual rollout to reduce risk during releases
+For support, email hello@aiagency.com or visit our website.
 
----
+## 🎓 Credits
 
-## Monitoring, logging, and observability
-
-- Use tools like Sentry for error capture, and Datadog/New Relic for performance tracing.
-- Centralize logs with a searchable stack (ELK/Datadog) and tag logs with request IDs.
-- Add Real User Monitoring (RUM) to measure real performance across regions and devices.
-
----
-
-## Testing strategy
-
-- Unit tests: Jest + React Testing Library
-- Integration/E2E: Playwright or Cypress to validate important flows
-- Visual regression tests: Chromatic / Percy
-- Performance checks: Lighthouse CI
-
-Run tests locally and in CI for every pull request.
-
----
-
-## SEO & accessibility
-
-- Use semantic HTML, correct meta tags, and Open Graph images for link preview.
-- Generate sitemap and robots.txt for search engines and keep SEO-friendly content on top.
-- Prioritize accessibility with automated checks (axe, Lighthouse) and manual audits for keyboard and screen reader experience.
-
----
-
-## Roadmap & ideas
-
-- Short term (now → 3 months)
-  - Expand marketing pages (features, comparison, pricing, testimonials)
-  - Add a headless CMS (Sanity, Contentful, Notion-based CMS) for easy content updates
-
-- Mid term (3 → 12 months)
-  - Add lightweight product surface or user accounts where applicable
-  - Publish a shared design system package and migrate components into that library
-
-- Long term (12+ months)
-  - Personalization, A/B testing, large-scale analytics, and geographic multi-region deployments
-
----
-
-## Contributing
-
-Contributions are welcome! Suggested workflow:
-
-1. Fork the repository and create a feature branch.
-2. Write a clear PR description and link relevant issues.
-3. Ensure linting and tests pass locally and in CI.
-
-For major changes (architecture, design system extraction) open an issue to discuss the plan first.
+- **UI Components**: Built with [shadcn/ui](https://ui.shadcn.com/)
+- **3D Scenes**: Created with [Spline](https://spline.design/)
+- **Fonts**: [Geist](https://vercel.com/font) by Vercel
+- **Icons**: [Lucide](https://lucide.dev/)
 
 ---
 
-## License & attribution
-
-This project is provided under the MIT License. Verify third-party package licenses for any bundled or published changes.
-
----
-
-If you'd like I can next add a GitHub Actions example, CONTRIBUTING.md, or a short list of recommended CI & linting steps — tell me what you'd prefer and I'll add it.
+Built with ❤️ using Next.js and Tailwind CSS
+~ Aviral Yadav
